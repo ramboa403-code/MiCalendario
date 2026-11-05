@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+:root {
+ --vino: #650020;
+--borgona: #8D123D;
+--rosa: #E9A9BC;
+--rosa-claro: #F9E9EC;
+--crema: #FFF8F6;
+--blanco: #FFFFFF;
+--texto: #401323;
+--borde: #EBCBD5;
+--sombra: 0 8px 22px rgba(101, 0, 32, 0.12);
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: 'DM Sans', sans-serif;
+background: var(--crema);
+color: var(--texto);
+min-height: 100vh;
+}
+
+.header {
+background: linear-gradient(120deg, var(--vino), var(--borgona));
+color: white;
+padding: 28px;
+text-align: center;
+}
+
+.logo {
+font-family: 'Playfair Display', serif;
+font-size: 38px;
+font-style: italic;
+font-weight: 600;
+}
+
+.header p {
+margin-top: 8px;
+color: #F9DDE5;
+}
+
+.container {
+max-width: 1250px;
+margin: 35px auto;
+padding: 20px;
+}
+
+.auth-card,
+.calendar-card,
+.reminder-card {
+background: var(--blanco);
+border: 1px solid var(--borde);
+border-radius: 22px;
+padding: 25px;
+box-shadow: var(--sombra);
+margin-bottom: 25px;
+}
+
+h1, h2 {
+font-family: 'Playfair Display', serif;
+color: var(--vino);
+}
+
+h1 {
+font-size: 30px;
+}
+
+h2 {
+font-size: 23px;
+margin-bottom: 18px;
+}
+
+p {
+line-height: 1.6;
+}
+
+input, textarea {
+width: 100%;
+padding: 14px 16px;
+margin: 9px 0;
+border: 1px solid var(--borde);
+border-radius: 13px;
+background: var(--crema);
+color: var(--texto);
+font: inherit;
+outline: none;
+}
+
+input:focus, textarea:focus {
+border-color: var(--borgona);
+box-shadow: 0 0 0 3px var(--rosa-claro);
+}
+
+textarea {
+min-height: 85px;
+resize: vertical;
+}
+
+button {
+border: none;
+border-radius: 13px;
+padding: 13px 20px;
+background: linear-gradient(120deg, var(--vino), var(--borgona));
+color: white;
+font: inherit;
+font-weight: 600;
+cursor: pointer;
+transition: 0.2s;
+}
+
+button:hover {
+transform: translateY(-2px);
+box-shadow: var(--sombra);
+}
+
+.secondary {
+background: var(--rosa-claro);
+color: var(--vino);
+border: 1px solid var(--borde);
+}
+
+.hidden {
+display: none !important;
+}
+
+.welcome {
+background: linear-gradient(120deg, #F7DCE5, #FFF0F3);
+padding: 25px;
+border-radius: 20px;
+margin-bottom: 25px;
+}
+
+.calendar-heading {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.calendar-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 5px;
+}
+
+.calendar-grid > div {
+min-height: 65px;
+padding: 12px 5px;
+text-align: center;
+border-radius: 12px;
+background: var(--crema);
+border: 1px solid #F4E2E7;
+}
+
+.calendar-grid .selected {
+background: var(--borgona);
+color: white;
+}
+
+.reminder-card label {
+display: block;
+margin-top: 10px;
+font-weight: 600;
+}
+
+#reminder-form button,
+#login-form button {
+width: 100%;
+margin-top: 12px;
+}
+
+#reminder-list {
+display: grid;
+gap: 12px;
+}
+
+#reminder-list > div {
+background: var(--rosa-claro);
+border-left: 5px solid var(--borgona);
+padding: 15px;
+border-radius: 12px;
+}
+
+footer {
+text-align: center;
+padding: 25px;
+color: var(--vino);
+font-family: 'Playfair Display', serif;
+}
+
+@media (min-width: 900px) {
+#app-section {
+display: grid;
+grid-template-columns: 1.3fr 1fr;
+gap: 20px;
+}
+#app-section .welcome {
+grid-column: 1 / -1;
+}
+}
+
+@media (max-width: 600px) {
+.container {
+padding: 12px;
+margin: 15px auto;
+}
+.calendar-grid > div {
+min-height: 45px;
+padding: 8px 2px;
+font-size: 13px;
+}
+.logo {
+ font-size: 30px;
+ }
+}
+

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiCalendario</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header class="header">
+<div class="logo">MiCalendario</div>
+<p>Organiza tus días, recuerda tus momentos.</p>
+</header>
+
+<main class="container">
+
+<!-- INICIO DE SESIÓN -->
+<section id="auth-section" class="auth-card">
+<h1>¡Bienvenida!</h1>
+<p>Inicia sesión para administrar tus recordatorios.</p>
+
+<form id="login-form">
+<input type="email" id="login-email"
+placeholder="Correo electrónico" required>
+
+<input type="password" id="login-password"
+placeholder="Contraseña" required>
+
+<button type="submit">Iniciar sesión</button>
+</form>
+
+<p>¿No tienes una cuenta?</p>
+<button id="show-register" class="secondary">
+Crear una cuenta
+</button>
+<form id="register-form" class="hidden">
+<h2>Crear cuenta</h2>
+
+<input type="email" id="register-email"
+placeholder="Correo electrónico" required>
+
+<input type="password" id="register-password"
+placeholder="Contraseña (mínimo 6 caracteres)"
+minlength="6" required>
+
+<button type="submit">Registrarme</button>
+<button type="button" id="show-login" class="secondary">
+Volver al inicio de sesión
+</button>
+</form>
+
+<p id="auth-message"></p>
+</section>
+
+<!-- APLICACIÓN -->
+<section id="app-section" class="hidden">
+
+<div class="welcome">
+<h1>Mi calendario</h1>
+<p id="user-email"></p>
+<button id="logout-button" class="secondary">
+Cerrar sesión
+</button>
+</div>
+
+<div class="calendar-card">
+<div class="calendar-heading">
+<button id="prev-month">❮</button>
+<h2 id="month-year"></h2>
+<button id="next-month">❯</button>
+</div>
+
+<div class="calendar-grid" id="calendar">
+</div>
+</div>
+
+<div class="reminder-card">
+<h2>Crear recordatorio</h2>
+<form id="reminder-form">
+<input type="text" id="reminder-title"
+placeholder="Nombre del evento" required>
+
+<textarea id="reminder-description"
+placeholder="Descripción del evento"></textarea>
+
+<label for="reminder-date">Fecha:</label>
+<input type="date" id="reminder-date" required>
+
+<label for="reminder-time">Hora:</label>
+<input type="time" id="reminder-time" required>
+
+<button type="submit">Guardar recordatorio</button>
+</form>
+</div>
+
+<div class="reminder-card">
+<h2>Mis próximos recordatorios</h2>
+<div id="reminder-list"></div>
+</div>
+</section>
+</main>
+<footer>
+<p>MiCalendario © 2026 - Todos los derechos reservados.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
